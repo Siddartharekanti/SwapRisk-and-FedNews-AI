@@ -1,6 +1,6 @@
-# Interest-Rate-Swap-Risk-Optimizer
+# SwapRisk-and-FedNews-AI
 
-**Quantitative Interest-Rate Swap Risk Engine & Automated Hedge Optimizer** developed for a BNP Paribas Global Markets portfolio. **Independent educational work; not affiliated with or endorsed by BNP Paribas.**
+**Quantitative Interest-Rate Swap Risk Engine & Federal Reserve News AI** developed for a BNP Paribas Global Markets portfolio. **Independent educational work; not affiliated with or endorsed by BNP Paribas.**
 
 > Requirements: **16 GB RAM / 3 GB GPU VRAM / 256 GB disk**. The core package uses **CPU only**. No GPU, paid API, financial terminal, QuantLib installation, or hosted LLM is needed. Python 3.10–3.13; Python 3.11 recommended.
 
@@ -124,9 +124,9 @@ python -m streamlit run dashboard.py
 ## Folder Structure
 
 ```text
-Interest-Rate-Swap-Risk-Optimizer/
+SwapRisk-and-FedNews-AI/
 ├── dashboard.py                  # Interactive Streamlit market/risk/news/validation UI
-├── pyproject.toml                # pip-installable CLI package (interest-rate-swap-risk-optimizer)
+├── pyproject.toml                # pip-installable CLI package (swaprisk-and-fednews-ai)
 ├── requirements.txt              # explicit package list
 ├── src/
 │   ├── yieldpulse/               # unified YieldPulse AI package entrypoint

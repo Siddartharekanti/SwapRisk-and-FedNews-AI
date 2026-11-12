@@ -16,7 +16,7 @@ from swapscribe.backtest import walk_forward_backtest
 from swapscribe.commentary import load_news, retrieve, build_commentary
 from swapscribe.sentiment import load_sentiment_model, score_news
 
-st.set_page_config(page_title="Interest-Rate-Swap-Risk-Optimizer", page_icon="📈", layout="wide")
+st.set_page_config(page_title="SwapRisk-and-FedNews-AI", page_icon="📈", layout="wide")
 ensure_dirs()
 
 # Hide the Deploy button on the top right
@@ -46,8 +46,8 @@ def read_news(path_str):
 def get_model(path_str):
     return load_sentiment_model(Path(path_str))
 
-st.title("Interest-Rate-Swap-Risk-Optimizer")
-st.caption("Quantitative Interest-Rate Swap Risk Engine & Automated Hedge Optimizer • CPU-First • BNP Paribas Portfolio Focus")
+st.title("SwapRisk-and-FedNews-AI")
+st.caption("Quantitative Interest-Rate Swap Risk Engine & Federal Reserve News AI • CPU-First • BNP Paribas Portfolio Focus")
 
 real_rate_paths = sorted((DATA / "real").glob("treasury_*.csv"))
 if not real_rate_paths:
@@ -72,7 +72,7 @@ if len(rate_view) < 7:
     st.error("Choose an as-of date with at least 7 previous rate observations.")
     st.stop()
 
-t1, t2, t3, t4 = st.tabs(["Market & curves", "Swap risk & optimization", "Market news & commentary", "Model & data quality"])
+t1, t2, t3, t4 = st.tabs(["Market & curves", "Swap risk & optimization", "Fed news & commentary", "Model & data quality"])
 with t1:
     latest = rate_view.iloc[-1]
     c1, c2, c3 = st.columns(3)

@@ -15,7 +15,7 @@ def mark(ok: bool) -> str:
 
 
 def main() -> int:
-    print("Interest-Rate-Swap-Risk-Optimizer — Local Diagnostic")
+    print("SwapRisk-and-FedNews-AI — Local Diagnostic")
     print(f"OS: {platform.platform()}")
     print(f"Python: {sys.version.split()[0]}")
     print(f"Python interpreter: {sys.executable}")
