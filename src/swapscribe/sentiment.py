@@ -84,7 +84,10 @@ def score_news(model, news: pd.DataFrame) -> pd.DataFrame:
         out["sentiment"] = pd.Series(dtype=str)
         out["confidence"] = pd.Series(dtype=float)
         return out
-    txt = out.title.fillna("").astype(str).tolist()
+    if "summary" in out.columns and out["summary"].fillna("").str.strip().ne("").any():
+        txt = (out.title.fillna("") + ". " + out.summary.fillna("")).astype(str).tolist()
+    else:
+        txt = out.title.fillna("").astype(str).tolist()
     probabilities = model.predict_proba(txt)
     idx = np.argmax(probabilities, axis=1)
     out["sentiment"] = [str(model.classes_[i]) for i in idx]

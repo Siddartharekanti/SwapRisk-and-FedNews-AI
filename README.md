@@ -55,7 +55,7 @@ where $\Gamma_k = \frac{PV(y + \delta e_k) - 2PV(y) + PV(y - \delta e_k)}{\delta
 
 ### Multi-Objective Convex Optimization
 $$\min_{h \in \mathbb{R}^M} \frac{1}{P} \| S (r + H h) \|_2^2 + \lambda \| h \|_2^2 \quad \text{subject to} \quad -h_{\max} \le h_j \le h_{\max}$$
-solved via SLSQP with box constraints ($h_{\max} = \$30\text{MM}$) and $L_2$ regularization ($\lambda = 200$).
+solved via bounded least squares (`scipy.optimize.lsq_linear` BVLS algorithm) with box constraints ($h_{\max} = \$30\text{MM}$) and $L_2$ regularization ($\lambda = 200$).
 
 ---
 
@@ -120,9 +120,8 @@ SwapRisk-and-FedNews-AI/
 │   └── swapscribe/
 │       ├── cli.py                # Command-line interface and orchestrator
 │       ├── market.py             # Par-to-zero bootstrapping, curve construction, market loaders
-│       ├── risk.py               # Swap pricing, key-rate DV01 Greeks, stress scenarios
+│       ├── risk.py               # Swap pricing, key-rate DV01 Greeks, bounded least-squares hedge optimizer
 │       ├── backtest.py           # Walk-forward backtesting with Gamma convexity & friction
-│       ├── optimizer.py          # Bounded SLSQP quadratic convex hedge optimizer
 │       ├── sentiment.py          # TF-IDF + balanced logistic regression classifier
 │       ├── commentary.py         # Grounded temporal retrieval and market note generation
 │       ├── data_sources.py       # Importers for Treasury, Fed RSS, and PhraseBank

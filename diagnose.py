@@ -1,4 +1,4 @@
-"""Offline, safe environment diagnostic for YieldPulse AI."""
+"""Offline, safe environment diagnostic for SwapRisk-and-FedNews-AI."""
 from __future__ import annotations
 
 import importlib.util

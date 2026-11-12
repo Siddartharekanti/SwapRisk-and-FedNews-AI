@@ -52,6 +52,13 @@ def fetch_fed_news(dest: Path, timeout=30) -> Path:
     if data.empty:
         raise ValueError("No dated Fed RSS items were returned")
     dest.parent.mkdir(parents=True, exist_ok=True)
+    if dest.exists() and dest.stat().st_size > 0:
+        try:
+            existing = pd.read_csv(dest)
+            data = pd.concat([existing, data], ignore_index=True)
+            data = data.drop_duplicates(subset=["date", "title"]).sort_values("date").reset_index(drop=True)
+        except Exception:
+            pass
     data.to_csv(dest, index=False)
     return dest
 

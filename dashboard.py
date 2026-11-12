@@ -145,7 +145,7 @@ with t3:
     st.subheader("Evidence-grounded financial research note")
     query = st.text_input("Retrieval query", "monetary policy treasury yields inflation")
     if not news_path.exists():
-        st.warning("No public news found. Run `python -m yieldpulse.cli fetch-news`.")
+        st.warning("No public news found. Run `python -m swapscribe.cli fetch-news`.")
     else:
         news = read_news(str(news_path))
         ranked = retrieve(news, query, cutoff, k=6)
@@ -181,7 +181,7 @@ with t4:
         st.dataframe(pd.DataFrame(m["confusion_matrix"], index=m["confusion_matrix_labels"],
                                 columns=m["confusion_matrix_labels"]), use_container_width=True)
     else:
-        st.info("Run `python -m yieldpulse.cli train --source real` to produce model metrics.")
+        st.info("Run `python -m swapscribe.cli train --source real` to produce model metrics.")
     st.markdown("""**Validation controls**
 
 - No test-set fitting; duplicate texts removed before the random, stratified split
