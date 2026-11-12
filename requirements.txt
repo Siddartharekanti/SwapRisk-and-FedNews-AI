@@ -1,0 +1,11 @@
+# CPU-first core: install with python -m pip install -e .
+# This file is convenient for environments that do not support editable installs.
+numpy>=1.24,<3
+pandas>=2.0,<3
+scipy>=1.10,<2
+scikit-learn>=1.3,<2
+joblib>=1.3,<2
+requests>=2.31,<3
+streamlit>=1.32,<2
+plotly>=5.18,<7
+pytest>=7,<10

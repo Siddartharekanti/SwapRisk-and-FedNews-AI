@@ -1,0 +1,68 @@
+{
+  "dataset_type": "real",
+  "data_source": "C:\\Users\\madhu\\Desktop\\SwapShield_Q_MacroScribe_Lite_With_Complete_Guide\\SwapShield_MacroScribe_Lite\\data\\real\\sentiment_train.csv",
+  "model_type": "TF-IDF (1-2 grams) + balanced logistic regression",
+  "eval_design": "single seeded stratified random 75/25 holdout; unique texts; no temporal information in PhraseBank",
+  "warning": "Financial PhraseBank measures sentence sentiment, not live macro-news performance",
+  "train_count": 2586,
+  "test_count": 862,
+  "test_accuracy": 0.851508120649652,
+  "test_macro_f1": 0.8093768838866877,
+  "baseline_macro_f1": 0.2553089954664758,
+  "confusion_matrix_labels": [
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "confusion_matrix": [
+    [
+      73,
+      19,
+      13
+    ],
+    [
+      4,
+      501,
+      30
+    ],
+    [
+      7,
+      55,
+      160
+    ]
+  ],
+  "class_report": {
+    "negative": {
+      "precision": 0.8690476190476191,
+      "recall": 0.6952380952380952,
+      "f1-score": 0.7724867724867724,
+      "support": 105.0
+    },
+    "neutral": {
+      "precision": 0.871304347826087,
+      "recall": 0.9364485981308411,
+      "f1-score": 0.9027027027027027,
+      "support": 535.0
+    },
+    "positive": {
+      "precision": 0.7881773399014779,
+      "recall": 0.7207207207207207,
+      "f1-score": 0.7529411764705882,
+      "support": 222.0
+    },
+    "accuracy": 0.851508120649652,
+    "macro avg": {
+      "precision": 0.8428431022583945,
+      "recall": 0.7841358046965524,
+      "f1-score": 0.8093768838866877,
+      "support": 862.0
+    },
+    "weighted avg": {
+      "precision": 0.8496208765024184,
+      "recall": 0.851508120649652,
+      "f1-score": 0.8482714596676654,
+      "support": 862.0
+    }
+  },
+  "seed": 42
+}

@@ -1,0 +1,5 @@
+swap_id,notional_usd,maturity_years,fixed_rate_pct,direction
+SWAP_A,9000000,3,4.1,pay_fixed
+SWAP_B,14000000,4,3.85,receive_fixed
+SWAP_C,12000000,12,4.4,pay_fixed
+SWAP_D,7000000,8,4.05,pay_fixed

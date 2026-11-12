@@ -1,0 +1,3 @@
+# OPTIONAL: only for pretrained FinBERT inference on CPU. Not needed for the core project.
+torch>=2.1,<3
+transformers>=4.40,<5

@@ -1,0 +1,68 @@
+{
+  "dataset_type": "demo",
+  "data_source": "C:\\Users\\madhu\\Desktop\\SwapShield_Q_MacroScribe_Lite_With_Complete_Guide\\SwapShield_MacroScribe_Lite\\data\\demo\\sentiment_train.csv",
+  "model_type": "TF-IDF (1-2 grams) + balanced logistic regression",
+  "eval_design": "single seeded stratified random 75/25 holdout; unique texts; no temporal information in PhraseBank",
+  "warning": "Synthetic smoke-test score; NOT an external model benchmark",
+  "train_count": 27,
+  "test_count": 9,
+  "test_accuracy": 0.3333333333333333,
+  "test_macro_f1": 0.3333333333333333,
+  "baseline_macro_f1": 0.16666666666666666,
+  "confusion_matrix_labels": [
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "confusion_matrix": [
+    [
+      0,
+      0,
+      3
+    ],
+    [
+      0,
+      3,
+      0
+    ],
+    [
+      3,
+      0,
+      0
+    ]
+  ],
+  "class_report": {
+    "negative": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 3.0
+    },
+    "neutral": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "positive": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 3.0
+    },
+    "accuracy": 0.3333333333333333,
+    "macro avg": {
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.3333333333333333,
+      "support": 9.0
+    },
+    "weighted avg": {
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.3333333333333333,
+      "support": 9.0
+    }
+  },
+  "seed": 42
+}

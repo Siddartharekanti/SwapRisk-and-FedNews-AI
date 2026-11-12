@@ -1,0 +1,71 @@
+{
+  "headline": "U.S. yield-curve market note",
+  "requested_as_of": "2026-08-28",
+  "market_observation_date": "2026-08-28",
+  "previous_observation_date": "2026-08-27",
+  "commentary": "As of 2026-08-28, the 2-year U.S. Treasury par yield was 4.23% (-1.8 bp vs. the preceding available observation), while the 10-year yield was 4.49% (+0.4 bp). The 10Y\u20132Y spread was +26.1 bp. These are U.S. Treasury par yields, not SOFR swap rates. Related retrieved headlines (context, not proven causal explanations): [1] Short-dated Treasury yields change after policy commentary (SYNTHETIC DEMO, 2026-08-07); [2] Treasury yields rise ahead of economic data release (SYNTHETIC DEMO, 2026-07-08); [3] Central bank officials discuss the outlook for policy rates (SYNTHETIC DEMO, 2026-07-06); [4] Market participants debate the timing of monetary easing (SYNTHETIC DEMO, 2026-07-14); [5] Employment growth data draw attention from rates desks (SYNTHETIC DEMO, 2026-08-03); [6] Analysts watch the spread between short and long yields (SYNTHETIC DEMO, 2026-08-17). This is an educational analytics summary, not investment advice.",
+  "evidence": [
+    {
+      "date": "2026-08-07",
+      "title": "Short-dated Treasury yields change after policy commentary",
+      "source": "SYNTHETIC DEMO",
+      "url": "",
+      "relevance": 0.2445,
+      "sentiment": "neutral",
+      "model_probability": 0.3395
+    },
+    {
+      "date": "2026-07-08",
+      "title": "Treasury yields rise ahead of economic data release",
+      "source": "SYNTHETIC DEMO",
+      "url": "",
+      "relevance": 0.1875,
+      "sentiment": "neutral",
+      "model_probability": 0.3878
+    },
+    {
+      "date": "2026-07-06",
+      "title": "Central bank officials discuss the outlook for policy rates",
+      "source": "SYNTHETIC DEMO",
+      "url": "",
+      "relevance": 0.1225,
+      "sentiment": "neutral",
+      "model_probability": 0.3685
+    },
+    {
+      "date": "2026-07-14",
+      "title": "Market participants debate the timing of monetary easing",
+      "source": "SYNTHETIC DEMO",
+      "url": "",
+      "relevance": 0.0838,
+      "sentiment": "neutral",
+      "model_probability": 0.3922
+    },
+    {
+      "date": "2026-08-03",
+      "title": "Employment growth data draw attention from rates desks",
+      "source": "SYNTHETIC DEMO",
+      "url": "",
+      "relevance": 0.0633,
+      "sentiment": "positive",
+      "model_probability": 0.3973
+    },
+    {
+      "date": "2026-08-17",
+      "title": "Analysts watch the spread between short and long yields",
+      "source": "SYNTHETIC DEMO",
+      "url": "",
+      "relevance": 0.0569,
+      "sentiment": "negative",
+      "model_probability": 0.3801
+    }
+  ],
+  "data_type": "Treasury par yields; synthetic where demo-mode provenance indicates so",
+  "limitations": [
+    "No demonstrated causal link between headlines and yield changes",
+    "Research RSS metadata may lag relevant market information",
+    "Point-in-time timing granularity is daily, not intraday"
+  ],
+  "mode": "demo",
+  "sentiment_model": "sentiment_demo.joblib"
+}

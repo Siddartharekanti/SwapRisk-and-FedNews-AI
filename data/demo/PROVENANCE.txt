@@ -1,0 +1,3 @@
+ALL data in data/demo are SYNTHETIC generated fixtures for tests and UI demos.
+They are NOT U.S. Treasury data, actual client trades, real news, or Financial PhraseBank.
+Run fetch-market, fetch-news, and fetch-sentiment for separately downloaded public data.

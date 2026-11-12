@@ -1,0 +1,71 @@
+{
+  "headline": "U.S. yield-curve market note",
+  "requested_as_of": "2026-11-10",
+  "market_observation_date": "2026-11-10",
+  "previous_observation_date": "2026-11-09",
+  "commentary": "As of 2026-11-10, the 2-year U.S. Treasury par yield was 4.73% (+17.0 bp vs. the preceding available observation), while the 10-year yield was 4.98% (+10.0 bp). The 10Y\u20132Y spread was +25.0 bp. These are U.S. Treasury par yields, not SOFR swap rates. Recent Federal Reserve releases for macroeconomic context (context, not proven causal explanations; no high-relevance policy announcement on this observation date): [1] Federal Reserve Board announces approval of two applications by Mutual Federal Bancorp, MHC, and MFB Bancorp, Inc. (Federal Reserve, 2026-11-09); [2] Federal Reserve Board announces termination of enforcement action with Allegiant United Holdings, LLC, Nano Financial Holdings, Inc., and Nano Banc (Federal Reserve, 2026-11-05); [3] Federal Reserve Board announces approval of application by The Bank of Nova Scotia (Federal Reserve, 2026-10-29); [4] Federal Reserve issues FOMC statement (Federal Reserve, 2026-10-28); [5] Federal Reserve Board announces termination of enforcement actions with Gardner Bancshares, Inc. and Small Business Bank (Federal Reserve, 2026-10-16); [6] Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026 (Federal Reserve, 2026-10-13). This is an educational analytics summary, not investment advice.",
+  "evidence": [
+    {
+      "date": "2026-11-09",
+      "title": "Federal Reserve Board announces approval of two applications by Mutual Federal Bancorp, MHC, and MFB Bancorp, Inc.",
+      "source": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261109a.htm",
+      "relevance": 0.0,
+      "sentiment": "neutral",
+      "model_probability": 0.7122
+    },
+    {
+      "date": "2026-11-05",
+      "title": "Federal Reserve Board announces termination of enforcement action with Allegiant United Holdings, LLC, Nano Financial Holdings, Inc., and Nano Banc",
+      "source": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261105a.htm",
+      "relevance": 0.0,
+      "sentiment": "neutral",
+      "model_probability": 0.7093
+    },
+    {
+      "date": "2026-10-29",
+      "title": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
+      "source": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261029a.htm",
+      "relevance": 0.0,
+      "sentiment": "neutral",
+      "model_probability": 0.6418
+    },
+    {
+      "date": "2026-10-28",
+      "title": "Federal Reserve issues FOMC statement",
+      "source": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+      "relevance": 0.0,
+      "sentiment": "neutral",
+      "model_probability": 0.6643
+    },
+    {
+      "date": "2026-10-16",
+      "title": "Federal Reserve Board announces termination of enforcement actions with Gardner Bancshares, Inc. and Small Business Bank",
+      "source": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261016a.htm",
+      "relevance": 0.0,
+      "sentiment": "neutral",
+      "model_probability": 0.7333
+    },
+    {
+      "date": "2026-10-13",
+      "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
+      "source": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
+      "relevance": 0.0,
+      "sentiment": "neutral",
+      "model_probability": 0.7188
+    }
+  ],
+  "data_type": "Official U.S. Treasury daily par yields; Federal Reserve official releases",
+  "limitations": [
+    "No demonstrated causal link between headlines and yield changes",
+    "Research RSS metadata may lag relevant market information",
+    "Point-in-time timing granularity is daily, not intraday"
+  ],
+  "mode": "real",
+  "sentiment_model": "sentiment_real.joblib"
+}

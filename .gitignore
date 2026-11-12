@@ -1,0 +1,23 @@
+# Python virtual environment
+.venv/
+env/
+venv/
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+wheels/
+
+# Streamlit local secrets
+.streamlit/secrets.toml
+
+# OS generated files
+.DS_Store
+Thumbs.db

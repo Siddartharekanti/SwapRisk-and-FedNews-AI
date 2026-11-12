@@ -1,0 +1,61 @@
+{
+  "tenors_years": [
+    1.0,
+    2.0,
+    3.0,
+    5.0,
+    7.0,
+    10.0,
+    20.0
+  ],
+  "unhedged_key_rate_usd_per_bp": [
+    -0.42694809020031244,
+    -1.4794167809886858,
+    44.857307390659116,
+    -2790.0118659555446,
+    2410.9898452160414,
+    9609.515698946081,
+    3118.8791851615533
+  ],
+  "hedged_key_rate_usd_per_bp": [
+    5.117157072639152,
+    -679.4125231452447,
+    -19.560516537825478,
+    -842.738422484817,
+    3002.3748689709937,
+    -642.3460253594567,
+    3118.8791851615533
+  ],
+  "hedge_unit_names": [
+    "HEDGE_2Y",
+    "HEDGE_5Y",
+    "HEDGE_10Y"
+  ],
+  "hedge_notional_usd_millions": [
+    -3.5539507727192285,
+    4.357153809096628,
+    -12.362876383615193
+  ],
+  "hedge_sign_convention": "+ pay fixed; - receive fixed",
+  "rms_scenario_pnl_usd_before": 114183.67687671994,
+  "rms_scenario_pnl_usd_after": 45684.825709067234,
+  "worst_scenario_pnl_usd_before": -960951.5698946081,
+  "worst_scenario_pnl_usd_after": -311887.91851615533,
+  "historical_scenarios": 215,
+  "stress_scenarios": 14,
+  "hedge_maturities_years": [
+    2,
+    5,
+    10
+  ],
+  "optimizer_cost_proxy": "ridge L2, not actual market bid-ask quotes",
+  "curve_model": "Treasury par yield interpolated as zero rate (educational proxy; NOT SOFR/OIS)",
+  "as_of": "2026-11-10",
+  "portfolio_pv_usd": 843877.122137578,
+  "parallel_dv01_usd_per_bp": 12392.192114865175,
+  "portfolio_swap_count": 4,
+  "parallel_up_100bp_pnl_usd": 1172591.778758374,
+  "parallel_down_100bp_pnl_usd": -1311360.6620389638,
+  "source_mode": "real",
+  "portfolio_source": "institutional benchmark portfolio; standard G10 tenors"
+}
