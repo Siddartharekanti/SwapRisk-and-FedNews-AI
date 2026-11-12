@@ -12,7 +12,7 @@
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261109a.htm",
       "relevance": 0.0,
       "sentiment": "neutral",
-      "model_probability": 0.7122
+      "model_probability": 0.7164
     },
     {
       "date": "2026-11-05",
@@ -21,7 +21,7 @@
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261105a.htm",
       "relevance": 0.0,
       "sentiment": "neutral",
-      "model_probability": 0.7093
+      "model_probability": 0.7156
     },
     {
       "date": "2026-10-29",
@@ -30,7 +30,7 @@
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261029a.htm",
       "relevance": 0.0,
       "sentiment": "neutral",
-      "model_probability": 0.6418
+      "model_probability": 0.637
     },
     {
       "date": "2026-10-28",
@@ -57,7 +57,7 @@
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
       "relevance": 0.0,
       "sentiment": "neutral",
-      "model_probability": 0.7188
+      "model_probability": 0.7282
     }
   ],
   "data_type": "Official U.S. Treasury daily par yields; Federal Reserve official releases",

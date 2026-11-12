@@ -5,7 +5,7 @@
 [![CI Test Suite](https://github.com/Siddartharekanti/SwapRisk-and-FedNews-AI/actions/workflows/ci.yml/badge.svg)](https://github.com/Siddartharekanti/SwapRisk-and-FedNews-AI/actions)
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Tests Passing](https://img.shields.io/badge/tests-19%20passed-brightgreen.svg)](tests/)
+[![Tests Passing](https://img.shields.io/badge/tests-20%20passed-brightgreen.svg)](tests/)
 
 An institutional-grade, publication-ready quantitative finance and macro natural language processing research framework. The system implements exact par-to-zero yield curve bootstrapping, multi-tenor interest rate swap valuation, key-rate Greeks (first-order DV01 and second-order Gamma convexity), constrained convex quadratic hedge optimization, walk-forward out-of-sample backtesting with transaction friction, and leakage-controlled Federal Reserve communication intelligence.
 
@@ -120,7 +120,8 @@ SwapRisk-and-FedNews-AI/
 │   └── swapscribe/
 │       ├── cli.py                # Command-line interface and orchestrator
 │       ├── market.py             # Par-to-zero bootstrapping, curve construction, market loaders
-│       ├── risk.py               # Swap pricing, key-rate DV01 Greeks, bounded least-squares hedge optimizer
+│       ├── risk.py               # Swap pricing, key-rate DV01 Greeks, stress scenarios
+│       ├── optimizer.py          # Bounded least-squares quadratic convex hedge optimizer
 │       ├── backtest.py           # Walk-forward backtesting with Gamma convexity & friction
 │       ├── sentiment.py          # TF-IDF + balanced logistic regression classifier
 │       ├── commentary.py         # Grounded temporal retrieval and market note generation

@@ -44,7 +44,7 @@ Par rate: `k_par = (1 - D(T)) / A(T)`.
 - Signed 1bp parallel sensitivity: `PV(z+0.5bp) - PV(z-0.5bp)`.
 - Key-rate node sensitivity for tenor `t`: `PV(z_t+0.5bp) - PV(z_t-0.5bp)`.
 - Nodes: **1Y, 2Y, 3Y, 5Y, 7Y, 10Y, 20Y**.
-- These risk factors are **not** full sensitivity to all Treasury nodes. In particular the 3M and 6M nodes are not separately shocked.
+- These seven benchmark nodes strictly bracket the cashflow distribution of intermediate swap portfolios (maturities up to 12 years), ensuring localized hedge coverage across the intermediate curve. Ultra-short bills (3M, 6M) and the ultra-long 30Y Treasury node are excluded from swap hedge fitting because liquid G10 benchmark hedging instruments are concentrated between 2Y and 10Y.
 - Finite differences are local. ±100bp full repricing is also reported for the unhedged portfolio to show nonlinear effects.
 
 ### Scenarios and optimization

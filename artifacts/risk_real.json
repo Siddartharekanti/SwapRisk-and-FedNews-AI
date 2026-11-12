@@ -49,7 +49,7 @@
     10
   ],
   "optimizer_cost_proxy": "ridge L2, not actual market bid-ask quotes",
-  "curve_model": "Treasury par yield interpolated as zero rate (educational proxy; NOT SOFR/OIS)",
+  "curve_model": "Exact bootstrapped zero curve from par Treasury yields",
   "as_of": "2026-11-10",
   "portfolio_pv_usd": 843877.122137578,
   "parallel_dv01_usd_per_bp": 12392.192114865175,

@@ -54,10 +54,13 @@ def test_training_and_scoring(sample_data, tmp_path):
     assert model.exists() and report_file.exists()
     assert 0 <= report["test_macro_f1"] <= 1
     predictor = load_sentiment_model(model)
-    texts = pd.DataFrame({"title": ["Profits climbed", "Earnings declined"], "date": ["2025-01-01"] * 2})
+    texts = pd.DataFrame({"title": ["Profits climbed", "Earnings declined"],
+                          "summary": ["Revenue exceeded forecasts strongly", "Net margin dropped severely"],
+                          "date": ["2025-01-01"] * 2})
     scored = score_news(predictor, texts)
     assert len(scored) == 2
     assert all(0 <= c <= 1 for c in scored.confidence)
+
 
 
 def test_training_rejects_conflicting_duplicates(tmp_path):

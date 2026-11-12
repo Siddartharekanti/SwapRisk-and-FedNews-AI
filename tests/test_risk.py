@@ -56,3 +56,13 @@ def test_invalid_portfolio():
         Swap("bad", 0, 4, 4.0)
     with pytest.raises(ValueError):
         Swap("bad", 1e6, 4, 4.0, "something")
+
+
+def test_optimizer_module_direct(rates, portfolio):
+    from swapscribe.optimizer import optimize_hedge as opt_direct
+    curve = curve_from_row(rates.iloc[-1])
+    hist = history_key_rate_changes(rates)
+    res = opt_direct(portfolio, curve, hist, max_abs_millions=10)
+    assert "hedge_notional_usd_millions" in res
+    assert len(res["hedge_notional_usd_millions"]) == 3
+
