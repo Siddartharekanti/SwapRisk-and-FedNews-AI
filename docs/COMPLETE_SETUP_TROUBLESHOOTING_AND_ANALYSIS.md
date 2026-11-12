@@ -1,4 +1,4 @@
-# Full Runbook — SwapShield-Q + MacroScribe-Lite
+# Full Runbook — SwapRisk-and-FedNews-AI
 
 A beginner-to-interview guide for the **BNP Paribas Global Markets Data Science Intern** portfolio project. This independent educational project is **not endorsed by BNP Paribas**, uses a **synthetic swap portfolio**, and **does not use real bank client data**. The first runs can be done fully offline after pip installation.
 
@@ -6,8 +6,8 @@ Hardware assumptions: **16 GB RAM**, **3 GB VRAM** (unused by default), **256 GB
 
 ## 1. What you will deliver
 
-- **SwapShield-Q** — ingest time series of U.S. Treasury par yields, create an illustrative synthetic fixed/floating swap book, calculate PV and per-tenor sensitivity, optimize 2Y/5Y/10Y offsetting hedge notionals, and compare against an unhedged book and a single 10Y DV01 hedge with walk-forward dates.
-- **MacroScribe-Lite** — ingest Financial PhraseBank and Federal Reserve RSS metadata, train a 3-class TF-IDF + balanced Logistic Regression sentiment model, evaluate against a majority-class baseline, retrieve as-of relevant headlines, and write a factual yield-curve market note with source links.
+- **SwapRisk** — ingest time series of U.S. Treasury par yields, create an illustrative synthetic fixed/floating swap book, calculate PV and per-tenor sensitivity, optimize 2Y/5Y/10Y offsetting hedge notionals, and compare against an unhedged book and a single 10Y DV01 hedge with walk-forward dates.
+- **FedNews-AI** — ingest Financial PhraseBank and Federal Reserve RSS metadata, train a 3-class TF-IDF + balanced Logistic Regression sentiment model, evaluate against a majority-class baseline, retrieve as-of relevant headlines, and write a factual yield-curve market note with source links.
 - **Dashboard** — view market curves, risk reports, optimizer notionals, out-of-sample results, market commentary, model metrics, and downloadable JSON.
 - **Tests** — 19 baseline tests check pricing identities, training, cutoff handling, and integration. Tests do not prove financial production validity.
 
@@ -33,10 +33,10 @@ Hardware assumptions: **16 GB RAM**, **3 GB VRAM** (unused by default), **256 GB
 
 ## 2. Extract the ZIP correctly
 
-Download `SwapShield_Q_MacroScribe_Lite_Complete.zip` (or this newer guided ZIP). Extract it to a path with no awkward special characters:
+Download `SwapShield_Q_FedNews_Lite_Complete.zip` (or this newer guided ZIP). Extract it to a path with no awkward special characters:
 
-- Windows example: `C:\Projects\SwapShield_MacroScribe_Lite`
-- macOS/Linux example: `~/Projects/SwapShield_MacroScribe_Lite`
+- Windows example: `C:\Projects\SwapRisk-and-FedNews-AI`
+- macOS/Linux example: `~/Projects/SwapRisk-and-FedNews-AI`
 
 The project root is the directory containing **`pyproject.toml`**, **`dashboard.py`**, **`diagnose.py`**, **`src/`**, and **`data/`**. Do not run the CLI from the directory *above* it.
 
@@ -47,7 +47,7 @@ The project root is the directory containing **`pyproject.toml`**, **`dashboard.
 Install Python 3.11 from https://www.python.org/downloads/ (ensure Python Launcher `py` is available), open **Command Prompt**, navigate to the root:
 
 ```bat
-cd /d C:\Projects\SwapShield_MacroScribe_Lite
+cd /d C:\Projects\SwapRisk-and-FedNews-AI
 py -3.11 --version
 py -3.11 -m venv .venv
 .venv\Scripts\python.exe -m pip install --upgrade pip
@@ -63,7 +63,7 @@ All commands above reference the virtual-environment interpreter directly. No Po
 ### macOS/Linux
 
 ```bash
-cd ~/Projects/SwapShield_MacroScribe_Lite
+cd ~/Projects/SwapRisk-and-FedNews-AI
 python3.11 --version
 python3.11 -m venv .venv
 source .venv/bin/activate
@@ -175,7 +175,7 @@ python -c "from pathlib import Path; from swapscribe.data_sources import parse_p
 
 For manually imported news, preserve its actual release dates and cite original URLs. Use exactly `date,title,summary,url,source` (and optionally `is_synthetic`). Do not invent news timestamps or use 2026 items in historical 2025 commentary.
 
-## 7. How SwapShield-Q works (with equations)
+## 7. How SwapRisk works (with equations)
 
 1. Read yield history and choose a valuation date; keep only observations on or before that date.
 2. Build a curve by interpolating Treasury par yields, treated *for demonstration only* as continuous zero-rate proxies, `z_proxy(t)`.
@@ -190,7 +190,7 @@ For manually imported news, preserve its actual release dates and cite original 
 
 **How to interpret:** A lower scenario RMS after optimizing does *not* prove that the method beats a simpler hedge on future daily returns. The stress-weighted training objective and the live future-test metric differ; report both.
 
-## 8. How MacroScribe-Lite works (real NLP)
+## 8. How FedNews-AI works (real NLP)
 
 1. Read `sentiment_train.csv` with `text,label`.
 2. Validate all 3 classes, trim strings, remove duplicate sentences, and fail on conflicting duplicate labels.
@@ -212,8 +212,8 @@ Run `python -m streamlit run dashboard.py`.
 - **Sidebar — As-of market date:** choose a date with >=7 rate observations available. This prevents future observations from entering valuation or commentary.
 - **Sidebar — Max absolute hedge per tenor ($MM):** default `30` means a hedge size limit of $30 million for *each* reference maturity.
 - **Market & curves:** view 2Y, 10Y, 10Y–2Y spread, rate time series and curve shape.
-- **SwapShield-Q risk:** inspect PV, signed +1bp sensitivity, scenario RMS reduction, key-rate before/after bars, optimized hedge notionals; optionally open synthetic portfolio. Click **Run 70-day rolling / 5-day forward backtest** after loading a sufficiently long history.
-- **MacroScribe commentary:** enter retrieval query; choose local TF-IDF model or no sentiment, inspect note and source-linked headlines; download report JSON.
+- **SwapRisk risk:** inspect PV, signed +1bp sensitivity, scenario RMS reduction, key-rate before/after bars, optimized hedge notionals; optionally open synthetic portfolio. Click **Run 70-day rolling / 5-day forward backtest** after loading a sufficiently long history.
+- **FedNews commentary:** enter retrieval query; choose local TF-IDF model or no sentiment, inspect note and source-linked headlines; download report JSON.
 - **Model & data quality:** inspect test macro-F1, baseline macro-F1, holdout count, confusion matrix, dataset provenance and warnings.
 
 **If dashboard shows 'No public news downloaded'**: run `fetch-news` in another terminal and rerun/reload the dashboard. The Streamlit cache has a 10-minute TTL; restart the server if needed to refresh.

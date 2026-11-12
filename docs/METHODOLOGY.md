@@ -8,7 +8,7 @@
 
 **Q3, retrieval:** Can a date-filtered retrieval pipeline produce a numerical market summary with all quantitative claims traceable to observable rates and all editorial context traceable to dated, attributed headlines?
 
-## 2. SwapShield-Q mathematics
+## 2. SwapRisk-and-FedNews-AI: Swap Risk & Hedging Mathematics
 
 ### Instrument definition
 
@@ -69,7 +69,7 @@ Compare OOS first-order daily P&L RMS of:
 
 OOS estimates are still **linearized** rather than actual trade P&L; they exclude coupons, transaction costs, carry, funding and intraday risks. Improvement is **not guaranteed** on new real-data windows. More elaborate research should add financing/coupon cashflows and reprice all swaps with market-standard curves.
 
-## 3. MacroScribe-Lite sentiment
+## 3. FedNews Macro Sentiment & Attribution
 
 ### Dataset
 

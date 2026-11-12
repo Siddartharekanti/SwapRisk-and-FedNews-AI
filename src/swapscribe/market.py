@@ -49,7 +49,7 @@ def fetch_treasury(year: int, dest: Path, timeout: int = 30) -> Path:
     if year < 1990 or year > pd.Timestamp.utcnow().year:
         raise ValueError("Year outside supported Treasury range")
     url = TREASURY_URL.format(year=year)
-    response = requests.get(url, timeout=timeout, headers={"User-Agent": "SwapShield-MacroScribe-Educational/1.0"})
+    response = requests.get(url, timeout=timeout, headers={"User-Agent": "SwapRisk-and-FedNews-AI/1.0"})
     response.raise_for_status()
     data = clean_treasury_csv(response.text)
     dest.parent.mkdir(parents=True, exist_ok=True)

@@ -46,7 +46,7 @@ def parse_rss(xml: str | bytes, origin="Federal Reserve") -> pd.DataFrame:
 
 
 def fetch_fed_news(dest: Path, timeout=30) -> Path:
-    response = requests.get(FED_RSS, timeout=timeout, headers={"User-Agent": "SwapShield-MacroScribe-Educational/1.0"})
+    response = requests.get(FED_RSS, timeout=timeout, headers={"User-Agent": "SwapRisk-and-FedNews-AI/1.0"})
     response.raise_for_status()
     data = parse_rss(response.content)
     if data.empty:
@@ -78,7 +78,7 @@ def parse_phrasebank_zip(content: bytes, agreement="75") -> pd.DataFrame:
 
 
 def fetch_phrasebank(dest: Path, timeout=45, agreement="75") -> Path:
-    response = requests.get(FPB_ZIP, timeout=timeout, headers={"User-Agent": "SwapShield-MacroScribe-Educational/1.0"})
+    response = requests.get(FPB_ZIP, timeout=timeout, headers={"User-Agent": "SwapRisk-and-FedNews-AI/1.0"})
     response.raise_for_status()
     df = parse_phrasebank_zip(response.content, agreement=agreement)
     dest.parent.mkdir(parents=True, exist_ok=True)

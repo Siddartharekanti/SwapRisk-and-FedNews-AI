@@ -19,7 +19,7 @@
                                |
                    +-----------+-----------+
                    |                       |
-         SwapShield-Q market/risk     MacroScribe NLP
+         SwapRisk-Q market/risk       FedNews NLP    
                    |                       |
           curve proxy + portfolio     TF-IDF sentiment
                    |                       |
