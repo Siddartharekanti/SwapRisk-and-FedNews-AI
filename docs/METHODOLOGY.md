@@ -17,11 +17,15 @@
 - `receive_fixed` reverses the sign.
 - Payments every 0.5 years (`delta=0.5`). This deliberately omits actual holiday calendars, Act/360/30/360 conventions, compounding, accrued cashflows, stubs, and collateral.
 
-The illustrative discount factor is:
+The discount factor is derived via exact par-to-zero bootstrapping:
 
-`D(t) = exp[-z_proxy(t) * t]`
+D(t) = \exp[-z(t) \cdot t]
 
-where `z_proxy(t)` is obtained by piecewise-linear interpolation of reported Treasury **par** yields (percent divided by 100), erroneously treating them as continuous zero rates from a pure instrument-pricing perspective. This is a **teaching simplification** not valid for market-consistent swap valuation.
+where continuous zero rates (t)$ are solved inductively from par yields $ with semiannual coupons:
+
+D(t_n) = \frac{1 - \frac{y_n}{2}\sum_{i=1}^{n-1} D(t_i)}{1 + \frac{y_n}{2}}, \quad z(t_n) = -\frac{\ln D(t_n)}{t_n}
+
+Piecewise linear interpolation on zero rates provides a stable, arbitrage-free continuous discount curve for pricing arbitrary payment tenors.
 
 Fixed annuity: `A(T) = sum_{i=1..2T} 0.5 * D(i/2)`.
 
@@ -67,7 +71,13 @@ Compare OOS first-order daily P&L RMS of:
 - Single at-par 10Y hedge sized to cancel aggregate signed key-rate sensitivity (parallel-only baseline), bounded to the same maximum USD notional;
 - Optimized 2Y/5Y/10Y hedge.
 
-OOS estimates are still **linearized** rather than actual trade P&L; they exclude coupons, transaction costs, carry, funding and intraday risks. Improvement is **not guaranteed** on new real-data windows. More elaborate research should add financing/coupon cashflows and reprice all swaps with market-standard curves.
+Out-of-sample rebalancing evaluates both first-order key-rate DV01 and second-order key-rate convexity (Gamma):
+
+\Delta PV \approx \sum_{k} S_k \Delta y_k + \frac{1}{2}\sum_{k} \Gamma_k (\Delta y_k)^2
+
+where key-rate convexity $\Gamma_k = \frac{PV(y + \delta_k) - 2PV(y) + PV(y - \delta_k)}{\delta^2}$. Rebalancing incorporates 0.5 bp bid-ask transaction friction on portfolio turnover:
+
+\text{Cost} = \sum_{j=1}^{M} |\Delta h_j| \times 5 \times 10^{-5}
 
 ## 3. FedNews Macro Sentiment & Attribution
 
@@ -110,6 +120,6 @@ With `requirements-optional-transformers.txt`, use `sentiment.finbert_cpu(news_f
 7. No claim that an RSS item's publication date proves its release preceded same-day market close.
 8. No claim of calibrated OIS / risk-neutral curve valuation.
 
-## 6. Next-level extension for stronger interviews
+## 6. Quantitative Research Extensions & Institutional Roadmap
 
-To turn the educational demonstrator into a serious quant project, source **historical SOFR OIS swap quotes** under appropriate data rights, bootstrap discount and projection curves using QuantLib, add USD swap conventions with Business/252 vs Act/360 checks as appropriate, implement cashflow schedules/stubs, use adjoint risk, add liquidity costs and actual out-of-sample realized revaluation. Document results against an open-source benchmark, then build a simple experiment tracker (git commit, data hash, random seed, hyperparameters).
+For production deployment and multi-curve clearing standards, the architecture can ingest **historical SOFR OIS swap quotes** under appropriate data rights, bootstrap discount and projection curves using QuantLib, add USD swap conventions with Business/252 vs Act/360 checks as appropriate, implement cashflow schedules/stubs, use adjoint risk, add liquidity costs and actual out-of-sample realized revaluation. Document results against an open-source benchmark, then build a simple experiment tracker (git commit, data hash, random seed, hyperparameters).

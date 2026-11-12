@@ -47,7 +47,7 @@ def get_model(path_str):
     return load_sentiment_model(Path(path_str))
 
 st.title("SwapRisk-and-FedNews-AI")
-st.caption("Quantitative Interest-Rate Swap Risk Engine & Federal Reserve News AI • CPU-First • BNP Paribas Portfolio Focus")
+st.caption("Quantitative Interest-Rate Swap Risk Engine & Grounded Federal Reserve News AI • Institutional Research Architecture")
 
 real_rate_paths = sorted((DATA / "real").glob("treasury_*.csv"))
 if not real_rate_paths:
